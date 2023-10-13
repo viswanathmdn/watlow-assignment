@@ -1,0 +1,68 @@
+<div class="container mt-4" *ngIf="!selectedCocktailDetail">
+  <div class="row" style="background-color: lightgrey;">
+    <div class="col-6">
+      <h3 class="fw-bold">{{type}}</h3>
+    </div>
+    <div class="col-6" style="text-align: right;">
+      <div class="dropdown">
+        <button type="button" style="width: auto;" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          {{dropdownSelectedItem}}
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item"  (click)="filterByProduct('Alcoholic')">Alcoholic</a></li>
+          <li><a class="dropdown-item" (click)="filterByProduct('Non-Alcoholic')">Non-Alcoholic</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-4" *ngFor="let details of filterCocktailDetails">
+      <div class="container ">
+        <div class="card  mt-2">
+          <div class="card-header fw-bold text-success"> {{details.strDrink}} - {{details.strAlcoholic}}</div>
+          <div class="card-body">
+            <div class="row">
+            </div>
+            <div class="row">
+              <img width="50" src="{{details.strDrinkThumb}}" alt="">
+            </div>
+            <div class="row">
+              <div class="col">
+                <ul>
+                  <li>
+                    {{details.strCategory}}
+                  </li>
+                  <li>
+                    {{details.strGlass}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row" style="min-height: 150px;max-height: 150px;overflow-y: auto;">
+              <div class="col">
+                {{details.strInstructions}}
+              </div>
+            </div>
+
+          </div>
+          <div class="card-footer text-end">
+            <button class="btn btn-sm btn-primary" (click)="onClickCocktailDetail(details)">View Ingredients</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4" *ngIf="cockDetailsEmpty">
+  <div class="col text-center fw-bold">
+    No data found
+  </div>
+</div>
+
+<div class="row" *ngIf="selectedCocktailDetail">
+  <div class="col">
+    <app-ingredients [cocktailDetail]="selectedCocktailDetail" (onClose)="onClose()"></app-ingredients>
+  </div>
+</div>

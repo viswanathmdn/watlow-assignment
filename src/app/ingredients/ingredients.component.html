@@ -1,0 +1,63 @@
+<div class="container ">
+  <div class="card  mt-2">
+    <div class="card-header fw-bold text-success"> {{cocktailDetail.strDrink}} - {{cocktailDetail.strAlcoholic}}</div>
+    <div class="card-body">
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="col-auto">
+          <img width="150px" src="{{cocktailDetail.strDrinkThumb}}" alt="">
+        </div>
+        <div class="col">
+          <table class="table table-sm table-primary">
+            <tbody>
+              <tr *ngIf="cocktailDetail.strIngredient1">
+                <td>Ingredient 1</td>
+                <td>{{cocktailDetail.strIngredient1}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient2">
+                <td>Ingredient 2</td>
+                <td>{{cocktailDetail.strIngredient2}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient3">
+                <td>Ingredient 3</td>
+                <td>{{cocktailDetail.strIngredient3}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient4">
+                <td>Ingredient 4</td>
+                <td>{{cocktailDetail.strIngredient4}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient5">
+                <td>Ingredient 5</td>
+                <td>{{cocktailDetail.strIngredient5}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient6">
+                <td>Ingredient 6</td>
+                <td>{{cocktailDetail.strIngredient6}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient7">
+                <td>Ingredient 7/td>
+                <td>{{cocktailDetail.strIngredient7}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient8">
+                <td>Ingredient 8</td>
+                <td>{{cocktailDetail.strIngredient8}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient9">
+                <td>Ingredient 9</td>
+                <td>{{cocktailDetail.strIngredient9}}</td>
+              </tr>
+              <tr *ngIf="cocktailDetail.strIngredient10">
+                <td>Ingredient 10</td>
+                <td>{{cocktailDetail.strIngredient10}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-end">
+      <button class="btn btn-sm btn-primary" (click)="onCloseClick()">Close</button>
+    </div>
+  </div>
+</div>
